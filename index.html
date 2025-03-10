@@ -6,46 +6,91 @@
     <title>Paradise White Villa - Booking</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
+    
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
-        <h1>Paradise White Villa</h1>
+        <div class="header-container">
+            <img src="images/logo.png" alt="Paradise White Villa Logo" class="logo">
+            <h1>Paradise White Villa</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#booking">Book Now</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <!-- <li><a href="#contact">Contact</a></li> -->
             </ul>
         </nav>
     </header>
 
+    <!-- Property Details Section -->
+    <section id="property-details">
+        <h2>Welcome to Paradise White Villa</h2>
+        <p>A luxurious 5BHK villa perfect for a relaxing stay with family and friends.</p>
+
+        <div class="details-container">
+            <div class="details-box">
+                <h3>BHK Type</h3>
+                <p>5 BHK</p>
+            </div>
+            <div class="details-box">
+                <h3>Room Types</h3>
+                <p>4 AC Rooms & 1 Non-AC Room</p>
+            </div>
+            <div class="details-box">
+                <h3>Facilities</h3>
+                <ul>
+                    <li>WiFi</li>
+                    <li>Parking</li>
+                    <li>Swimming Pool</li>
+                    <li>Barbecue Setup</li>
+                    <li>Kitchen Access</li>
+                    <li>Spacious Hall</li>
+                </ul>
+            </div>
+            <div class="details-box">
+                <h3>Extras</h3>
+                <p>₹1000 for Campfire (Optional)</p>
+                <p>₹100 per person for Breakfast (Optional)</p>
+            </div>
+            <div class="details-box">
+                <h3>Max Capacity</h3>
+                <p>15-20 Pax (Friends) | 18 Pax (Family)</p>
+            </div>
+            <div class="details-box">
+                <h3>Tariff Range</h3>
+                <p>₹18,000 - ₹20,000 (Weekdays)</p>
+                <p>₹23,000 - ₹25,000 (Weekends)</p>
+            </div>
+            <div class="details-box">
+                <h3>Nearby Attractions</h3>
+                <p>7km from Rock Beach</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Booking Section -->
     <section id="booking">
         <h2>Book Your Stay</h2>
-
         <form id="booking-form">
-            <!-- Check-in & Check-out Dates -->
             <label for="checkin">Check-in Date:</label>
             <input type="date" id="checkin" name="checkin" required>
 
             <label for="checkout">Check-out Date:</label>
             <input type="date" id="checkout" name="checkout" required>
 
-            <!-- Number of Guests -->
             <label for="guests">Number of Guests:</label>
             <input type="number" id="guests" name="guests" min="1" max="20" required>
 
-            <!-- Room Selection -->
             <label for="room-type">Select Room:</label>
             <select id="room-type" name="room-type">
                 <option value="ac">AC Room</option>
                 <option value="non-ac">Non-AC Room</option>
             </select>
 
-            <!-- Additional Services -->
             <div>
                 <input type="checkbox" id="campfire" name="campfire" value="1000">
                 <label for="campfire">Campfire (₹1000 Extra)</label>
@@ -56,26 +101,88 @@
                 <label for="breakfast">Breakfast (₹100 per person)</label>
             </div>
 
-            <!-- Check Price Button -->
             <button type="button" onclick="calculatePrice()">Check Price</button>
-            
-            
-
-            <!-- Price Display -->
             <h3>Total Price: ₹<span id="total-price">0</span></h3>
-
-            <!-- Book Now Button (For Payment) -->
             <button type="button" onclick="initiatePayment()">Proceed to Payment</button>
         </form>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>For inquiries, call us at +91 XXXXXXXXXX</p>
+    <!-- Image Sections -->
+    <section id="image-sections">
+        <h2>Our Property</h2>
+
+        <!-- Swimming Pool -->
+        <div class="image-section">
+            <h3>Swimming Pool</h3>
+            <div class="image-carousel">
+                <img src="images/5.jpg" alt="Swimming Pool">
+                <img src="images/9.jpg" alt="Swimming Pool">
+                <img src="images/7.jpg" alt="Swimming Pool">
+                <img src="images/6.jpg" alt="Swimming Pool">
+            </div>
+        </div>
+
+        <!-- Rooms -->
+        <div class="image-section">
+            <h3>Rooms</h3>
+            <div class="image-carousel">
+                <img src="images/10.jpg" alt="AC Room">
+                <img src="images/11.jpg" alt="AC Room">
+                <img src="images/12.jpg" alt="AC Room">
+                <img src="images/13.jpg" alt="AC Room">
+                <img src="images/17.jpg" alt="AC Room">
+                <img src="images/18.jpg" alt="AC Room">
+                <img src="images/24.jpg" alt="AC Room">
+                <img src="images/25.jpg" alt="AC Room">
+                <img src="images/26.jpg" alt="AC Room">
+                <img src="images/22.jpg" alt="Non-AC Room">
+                <img src="images/27.jpg" alt="Non-AC Room">
+            </div>
+        </div>
+
+        <!-- Kitchen and Hall -->
+        <div class="image-section">
+            <h3>Kitchen & Hall</h3>
+            <div class="image-carousel">
+                <img src="images/16.jpg" alt="Kitchen">
+                <img src="images/14.jpg" alt="Hall">
+                <img src="images/15.jpg" alt="Hall">
+                <img src="images/19.jpg" alt="Hall">
+            </div>
+        </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="image-carousel">
+            <img src="images/3.jpg" alt="Gallery Image 1">
+            <img src="images/1.jpg" alt="Gallery Image 2">
+            <img src="images/2.jpg" alt="Gallery Image 3">
+            <img src="images/4.jpg" alt="Gallery Image 4">
+            <img src="images/20.jpg" alt="Gallery Image 5">
+            <img src="images/28.jpg" alt="Gallery Image 6">
+            <img src="images/29.jpg" alt="Gallery Image 7">
+            <img src="images/30.jpg" alt="Gallery Image 8">
+        </div>
+    </section>
 
+    <!-- Google Maps Section -->
+    <section id="location">
+        <h2>Our Location</h2>
+        <iframe 
+            
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3903.0728351179987!2d79.79152067505994!3d11.969459088261294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDU4JzEwLjEiTiA3OcKwNDcnMzguNyJF!5e0!3m2!1sen!2sin!4v1741540672286!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            
+            >
+        </iframe>
+    </section>
+
+    
+
+    <script src="js/script.js"></script>
 </body>
 </html>
