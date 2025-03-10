@@ -215,6 +215,13 @@ h3 {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
 }
 
+/* Media Query for Mobile */
+@media (max-width: 600px) {
+    #location iframe {
+        height: 250px; /* Reduce height for small screens */
+    }
+}
+
 html, body {
     overflow-x: hidden;
 }
