@@ -201,7 +201,7 @@ h3 {
 }
 
 #location {
-    width: 400px; /* Adjust width */
+    width: 90%; /* Adjust width */
     max-width: 800px; /* Limit max width */
     height: auto; /* Adjust height dynamically */
     margin: 40px auto; /* Center the section */
