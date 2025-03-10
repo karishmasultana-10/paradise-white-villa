@@ -44,12 +44,12 @@ function initiatePayment() {
     }
 
     const options = {
-        "key": "rzp_live_cdyu5RtyKsMS6u", // Replace with your Razorpay Key
-        "amount": totalPrice * 100, // Convert to paise
+        "key": "rzp_live_cdyu5RtyKsMS6u", 
+        "amount": totalPrice * 100, 
         "currency": "INR",
         "name": "Paradise White Villa",
         "description": "Villa Booking Payment",
-        "image": "images/logo.png", // Replace with your logo image
+        "image": "images/logo.png", 
         "handler": function (response) {
             alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
         },
