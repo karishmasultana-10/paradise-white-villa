@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="stylesheet" href="css/booking-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2><i class="fas fa-receipt"></i> Booking Summary</h2>
+
+        <p><strong><i class="fas fa-user"></i> Name:</strong> <span id="guest-name"></span></p>
+        <p><strong><i class="fas fa-envelope"></i> Email:</strong> <span id="guest-email"></span></p>
+        <p><strong><i class="fas fa-phone"></i> Phone:</strong> <span id="guest-phone"></span></p>
+        <p><strong><i class="fas fa-calendar-check"></i> Check-in:</strong> <span id="checkin-date"></span></p>
+        <p><strong><i class="fas fa-calendar-times"></i> Check-out:</strong> <span id="checkout-date"></span></p>
+        <p><strong><i class="fas fa-users"></i> Guests:</strong> <span id="guests"></span></p>
+        <p><strong><i class="fas fa-bed"></i> Room Type:</strong> <span id="room-type"></span></p>
+        <p><strong><i class="fas fa-concierge-bell"></i> Extras:</strong> <span id="extras"></span></p>
+        
+        <p id="total-price-container">
+            <strong><i class="fas fa-wallet"></i> Total Price:</strong> 
+            <span id="rupee-symbol">₹</span><span id="total-price"></span>
+        </p>
+        
+
+        <button onclick="payNow()"><i class="fas fa-credit-card"></i> Pay Now</button>
+
+        <div class="footer-contact">
+            <p>Contact Us:</p>
+            <p><i class="fas fa-map-marker-alt"></i> Near Sangamithra Convensation 71, Mahavishnu Nagar, Mortandi, Pattanur, Tamil Nadu 605111
+            </p>
+            <p><i class="fas fa-envelope"></i> paradisewhitevilla@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +918056954927</p>
+
+            <div class="social-icons">
+                <a href="http://Paradisegroups.in" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/918110010311"" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://youtube.com/@paradisegroups.official?si=hfMb1_1oZHKvt5Hr" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://g.co/kgs/6NPACWS" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/booking-details.js"></script>
+</body>
+</html>

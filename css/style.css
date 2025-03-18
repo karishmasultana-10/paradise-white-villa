@@ -89,9 +89,48 @@ nav ul li a {
     font-size: 16px;
 }
 
+/* Guest Details Section */
+#guest-details {
+    background: #c8e6c9;
+    /* border-left: 5px solid #388e3c; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#guest-details h2 {
+    color: #093029;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.guest-info label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #093029;
+}
+
+.guest-info input {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+#guest-details form {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Booking Section */
 #booking {
-    max-width: 500px;
+    max-width: 600px;
     margin: 50px auto;
     padding: 20px;
     background: #aee0bf;
@@ -137,12 +176,14 @@ button:hover {
     background-color: #004d40;
 }
 
+
+
 /* Price Display */
 h3 {
     text-align: center;
-    color: #347a41;
-    font-size: 20px;
-    margin-top: 15px;
+    color: #004d40;
+    font-size: 25px;
+    margin-top: 30px;
     font-family: emoji;
 }
 

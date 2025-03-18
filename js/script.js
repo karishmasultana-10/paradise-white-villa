@@ -34,8 +34,42 @@ function calculatePrice() {
     document.getElementById("total-price").textContent = totalPrice;
 }
 
+// Function to handle guest details validation
+function validateGuestDetails() {
+    let guestName = document.getElementById("guest-name").value.trim();
+    let guestEmail = document.getElementById("guest-email").value.trim();
+    let guestPhone = document.getElementById("guest-phone").value.trim();
+    
+    // Validate Name
+    if (guestName === "") {
+        alert("Please enter your name.");
+        return false;
+    }
+
+    // Validate Email
+    if (!/\S+@\S+\.\S+/.test(guestEmail)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    // Validate Phone Number (Assuming Indian number format)
+    if (!/^\d{10}$/.test(guestPhone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+    }
+
+    return true;
+}
+
+
 // Function to initiate Razorpay payment
 function initiatePayment() {
+
+    if (!validateGuestDetails()) {
+        return; // Stop payment if guest details are invalid
+    }
+
+
     const totalPrice = document.getElementById("total-price").innerText;
     
     if (totalPrice === "0") {
@@ -43,27 +77,27 @@ function initiatePayment() {
         return;
     }
 
-    const options = {
-        "key": "rzp_live_cdyu5RtyKsMS6u", 
-        "amount": totalPrice * 100, 
-        "currency": "INR",
-        "name": "Paradise White Villa",
-        "description": "Villa Booking Payment",
-        "image": "images/logo.png", 
-        "handler": function (response) {
-            alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+        // Get form values
+    const bookingDetails = {
+        guestName: document.getElementById("guest-name").value.trim(),
+        guestEmail: document.getElementById("guest-email").value.trim(),
+        guestPhone: document.getElementById("guest-phone").value.trim(),
+        checkinDate: document.getElementById("checkin").value,
+        checkoutDate: document.getElementById("checkout").value,
+        guests: document.getElementById("guests").value,
+        roomType: document.getElementById("room-type").value,
+        extras: {
+            campfire: document.getElementById("campfire").checked,
+            breakfast: document.getElementById("breakfast").checked
         },
-        "prefill": {
-            "name": "Guest",
-            "email": "guest@example.com",
-            "contact": "9999999999"
-        },
-        "theme": {
-            "color": "#00796b"
-        }
+        totalPrice: totalPrice
     };
+    
+        // Save booking details to localStorage
+    localStorage.setItem("bookingDetails", JSON.stringify(bookingDetails));
+    // Redirect to booking details page after successful payment
+            window.location.href = "booking-details.html";
 
-    const rzp = new Razorpay(options);
-    rzp.open();
+    
 }
 
