@@ -138,3 +138,10 @@ h2 {
 .social-icons a:hover {
     color: #005f5f;
 }
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        display: block;
+    }
