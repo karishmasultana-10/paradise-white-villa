@@ -1,5 +1,5 @@
 /* Global Styles */
-@media (max-width: 768px) {
+
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #00695C, #4DB6AC);
@@ -140,4 +140,4 @@ h2 {
     color: #005f5f;
 }
 
-    }
+   
