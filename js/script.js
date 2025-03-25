@@ -61,6 +61,25 @@ function validateGuestDetails() {
     return true;
 }
 
+// Function to check if the selected dates include any closed dates
+function isBookingOnClosedDate(checkin, checkout) {
+    let closedDates = JSON.parse(localStorage.getItem("closedDates")) || [];
+    
+    let checkinDate = new Date(checkin);
+    let checkoutDate = new Date(checkout);
+
+    for (let closedDate of closedDates) {
+        let closed = new Date(closedDate);
+        
+        // If any closed date falls within the booking period
+        if (closed >= checkinDate && closed <= checkoutDate) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 
 // Function to initiate Razorpay payment
 function initiatePayment() {
@@ -92,6 +111,12 @@ function initiatePayment() {
         },
         totalPrice: totalPrice
     };
+
+    // **Check if booking falls on a closed date**
+    if (isBookingOnClosedDate(bookingDetails.checkinDate, bookingDetails.checkoutDate)) {
+        alert("Sorry, booking is not available on one or more selected dates. Please choose a different date.");
+        return;
+    }
     
         // Save booking details to localStorage
     localStorage.setItem("bookingDetails", JSON.stringify(bookingDetails));
@@ -101,3 +126,26 @@ function initiatePayment() {
     
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    displayClosedDates();
+});
+
+function displayClosedDates() {
+    const closedDatesList = document.getElementById("closedDatesList");
+    closedDatesList.innerHTML = "";
+
+    let closedDates = JSON.parse(localStorage.getItem("closedDates")) || [];
+
+    if (closedDates.length === 0) {
+        document.getElementById("closedDatesNotice").style.display = "none";
+        return;
+    }
+
+    document.getElementById("closedDatesNotice").style.display = "block";
+
+    closedDates.forEach((date) => {
+        let li = document.createElement("li");
+        li.textContent = `📅 ${date}`;
+        closedDatesList.appendChild(li);
+    });
+}

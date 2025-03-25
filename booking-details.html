@@ -12,41 +12,83 @@
 <body>
 
     <div class="container">
-        <h2><i class="fas fa-receipt"></i> Booking Summary</h2>
+        <!-- Booking Summary -->
+        <div class="card booking-summary">
+            <h2><i class="fas fa-receipt"></i> Booking Summary</h2>
+            <div class="info-group">
+                <div><i class="fas fa-user"></i> Name:</div> <div id="guest-name"></div>
+                <div><i class="fas fa-envelope"></i> Email:</div> <div id="guest-email"></div>
+                <div><i class="fas fa-phone"></i> Phone:</div> <div id="guest-phone"></div>
+                <div><i class="fas fa-calendar-check"></i> Check-in:</div> <div id="checkin-date"></div>
+                <div><i class="fas fa-calendar-times"></i> Check-out:</div> <div id="checkout-date"></div>
+                <div><i class="fas fa-users"></i> Guests:</div> <div id="guests"></div>
+                <div><i class="fas fa-bed"></i> Room Type:</div> <div id="room-type"></div>
+                <div><i class="fas fa-concierge-bell"></i> Extras:</div> <div id="extras"></div>
+            </div>
 
-        <p><strong><i class="fas fa-user"></i> Name:</strong> <span id="guest-name"></span></p>
-        <p><strong><i class="fas fa-envelope"></i> Email:</strong> <span id="guest-email"></span></p>
-        <p><strong><i class="fas fa-phone"></i> Phone:</strong> <span id="guest-phone"></span></p>
-        <p><strong><i class="fas fa-calendar-check"></i> Check-in:</strong> <span id="checkin-date"></span></p>
-        <p><strong><i class="fas fa-calendar-times"></i> Check-out:</strong> <span id="checkout-date"></span></p>
-        <p><strong><i class="fas fa-users"></i> Guests:</strong> <span id="guests"></span></p>
-        <p><strong><i class="fas fa-bed"></i> Room Type:</strong> <span id="room-type"></span></p>
-        <p><strong><i class="fas fa-concierge-bell"></i> Extras:</strong> <span id="extras"></span></p>
-        
-        <p id="total-price-container">
-            <strong><i class="fas fa-wallet"></i> Total Price:</strong> 
-            <span id="rupee-symbol">₹</span><span id="total-price"></span>
-        </p>
-        
-
-        <button onclick="payNow()"><i class="fas fa-credit-card"></i> Pay Now</button>
-
-        <div class="footer-contact">
-            <p>Contact Us:</p>
-            <p><i class="fas fa-map-marker-alt"></i> Near Sangamithra Convensation 71, Mahavishnu Nagar, Mortandi, Pattanur, Tamil Nadu 605111
+            <div class="total-price" id="payment-section">
+                <p id="total-price-container">
+                    <strong><i class="fas fa-wallet payment-icons"></i> Total Price:</strong> 
+                    <span id="rupee-symbol">₹</span><span id="total-price"></span>
+                </p>
+            
+                <!-- Payable Now Section -->
+                <p class="payable-now">
+                    <strong><i class="fas fa-money-bill-wave payment-icons"></i> Payable Now:</strong>
+                    <span id="rupee-symbol">₹</span><span id="advance-payment"></span>
+                </p>
+            
+                <!-- Remaining Pay at Hotel Section -->
+                <p class="pay-at-hotel">
+                    <strong><i class="fas fa-coins payment-icons"></i> Remaining :</strong>
+                    <span id="rupee-symbol">₹</span><span id="remaining-payment"></span>
+                </p>
+            </div>
+            <p id="booking-closed-message" class="booking-closed" style="display: none;">
+                ❌ Booking is closed for the selected dates. Please choose another date.
             </p>
+            
+            <button class="pay-btn" onclick="payNow()">
+                <i class="fas fa-credit-card"></i> Pay Now
+            </button>
+            
+
+        <!-- Footer -->
+        <div class="card footer-contact">
+            <h2>Contact Us</h2>
+            <p><i class="fas fa-map-marker-alt"></i> Near Sangamithra Convensation, Tamil Nadu 605111</p>
             <p><i class="fas fa-envelope"></i> paradisewhitevilla@gmail.com</p>
             <p><i class="fas fa-phone"></i> +918056954927</p>
 
-            <div class="social-icons">
-                <a href="http://Paradisegroups.in" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/918110010311"" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://youtube.com/@paradisegroups.official?si=hfMb1_1oZHKvt5Hr" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://g.co/kgs/6NPACWS" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            <div class="social-section">
+                <h2>Check Us Out</h2>
+                <div class="social-icons">
+                    <a href="https://wa.me/918110010311" target="_blank">
+                        <img src="images/whatsapp.png" alt="WhatsApp" width="30px">
+                    </a>
+                    <a href="https://www.instagram.com/paradisegroups.official/" target="_blank">
+                        <img src="images/instagram.png" alt="Instagram" width="30px">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61563457773817#" target="_blank">
+                        <img src="images/facebook.png" alt="Facebook" width="30px">
+                    </a>
+                    <a href="https://twitter.com/@paradisegroups_" target="_blank">
+                        <img src="images/twitter.png" alt="Twitter" width="30px">
+                    </a>
+                    <a href="https://www.linkedin.com/in/aroul-ramasamy-a6a42a32b/" target="_blank">
+                        <img src="images/linkedin.png" alt="LinkedIn" width="30px">
+                    </a>
+                    <a href="https://youtube.com/@paradisegroups.official?si=hfMb1_1oZHKvt5Hr" target="_blank">
+                        <img src="images/youtube.png" alt="Youtube" width="30px">
+                    </a>
+                    <a href="https://yourwebsite.com" target="_blank">
+                        <img src="images/internet.png" alt="Website" width="30px">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="js/booking-details.js"></script>
+    <script defer src="js/booking-details.js"></script>
 </body>
 </html>
